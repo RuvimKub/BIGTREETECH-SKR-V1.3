@@ -12,7 +12,7 @@ class PreviewProvider: QLPreviewProvider, QLPreviewingController {
         let scale = 720 / max(w, h)
         let size = CGSize(width: (w * scale).rounded(), height: (h * scale).rounded())
 
-        let reply = QLPreviewReply(contextSize: size, isBordered: false) { context, _ in
+        let reply = QLPreviewReply(contextSize: size, isBitmap: false) { context, _ in
             context.interpolationQuality = .high
             context.draw(image, in: CGRect(origin: .zero, size: size))
         }
